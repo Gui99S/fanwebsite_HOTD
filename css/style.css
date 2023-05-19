@@ -1,0 +1,562 @@
+:root {
+    --red: rgb(162, 46, 18);
+    /* 165, 42,42 */
+    --black: #030303;
+    --green: rgb(46, 138, 49);
+    --gold: rgb(240,195,15);
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    transition: all .2s linear;
+    cursor: default;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--red);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    padding: 2rem 9%;
+    overflow-y: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--black);
+    padding: 2rem 9%;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 2rem rgba(0,0,0,.2);
+    display: flex;
+}
+
+.navbar {
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbar a {
+    float: right;
+    color: var(--red);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+  }
+
+.navbar a:hover {
+    background-color: var(--red);
+    color: var(--black);
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+.footer {
+    background-color: var(--black);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
+    font-size: 1.3rem;
+    color: var(--red);
+    text-align: center;
+    width: 100%;
+    user-select: none;
+}
+
+/* INDEX PAGE */
+
+
+.index-body {
+    background-color: rgb(29, 26, 25);
+}
+
+.index-body ::selection {
+    color: var(--red);
+    background: var(--black);
+}
+
+.logo-wrapper {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* BLACKS SECTION TARGARYENS/VELARYONS */
+/*
+.blacks-body {
+    background-color: var(--red);
+} 
+*/
+
+.blacks-body ::selection {
+    color: var(--red);
+    background: var(--black);
+}
+
+.characterlist {
+    padding: 0;
+    position: relative;
+}
+
+.characterlist .slide-container .slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 9%;
+    padding-top: 9rem;
+}
+
+.characterlist .slide-container .slide .content {
+    flex: 1 1 40rem;
+    animation: slideContent .4s linear 1s backwards;
+}
+
+@keyframes slideContent {
+    0% {
+        opacity: 0%;
+        transform: translate(-10rem);
+    }
+}
+
+.characterlist .slide-container .slide .image {
+    flex: 1 1 50rem;
+    padding-bottom: 15rem;
+    position: relative;
+    z-index: 0;
+}
+
+.characterlist .slide-container .slide .image .char {
+    width: 35%;
+    height: auto;
+    animation: char .3s linear .3s backwards;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes char {
+    0% {
+        transform: rotate(2deg) scale(.5);
+    }
+}
+
+.characterlist .slide-container .slide .image .char2 {
+    width: 45%;
+    height: auto;
+    animation: char .3s linear .3s backwards;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes char2 {
+    0% {
+        transform: rotate(2deg) scale(.5);
+    }
+}
+
+.characterlist .slide-container .slide .image .char3 {
+    width: 52%;
+    height: auto;
+    animation: char .3s linear .3s backwards;
+    pointer-events: none;
+    user-select: none;
+}
+
+@keyframes char3 {
+    0% {
+        transform: rotate(2deg) scale(.5);
+    }
+}
+
+.characterlist .slide-container .slide .content #title {
+    font-size: 2rem;
+    color: var(--black);
+    display: block;
+    text-align: center;
+}
+
+.characterlist .slide-container .slide .content h3 {
+    font-size: 5rem;
+    color: var(--black);
+    text-transform: capitalize;
+    display: block;
+    text-align: center;
+}
+
+.characterlist .slide-container .slide .content #casting-note {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+}
+
+.characterlist .slide-container .slide .content p {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    color: var(--black);
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.characterlist .slide-container {
+    display: none;
+}
+
+.characterlist .slide-container.active {
+    display: block;
+}
+
+.characterlist #prevB,
+.characterlist #nextB {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 100;
+    height: 5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border: .2rem solid var(--black);
+    cursor: pointer;
+    text-align: center;
+}
+
+.characterlist #prevB:hover,
+.characterlist #nextB:hover {
+    color: var(--red);
+    background: var(--black);
+}
+
+.characterlist #prevB {
+    left: 3rem;
+    position: fixed;
+}
+
+.characterlist #nextB {
+    right: 3rem;
+    position: fixed;
+}
+
+
+
+
+
+
+
+/* GREENS SECTION HIGHTOWERS/TARGARYENS */
+
+.greens-body {
+    background-color: var(--green);
+}
+
+.greens-body ::selection {
+    color: var(--green);
+    background: var(--black);
+}
+
+.navbarG {
+    overflow: hidden;
+}
+
+.logoG {
+    float: left;
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    user-select: none;
+}
+
+.navbarG a {
+    float: right;
+    color: var(--green);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 1px;
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+  }
+  
+.navbarG a:hover {
+    background-color: var(--green);
+    color: var(--black);
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+#menu-bar {
+    font-size: 2.5rem;
+    padding: .5rem 1.5rem;
+    border: .1rem solid var(--red);
+    color: var(--black);
+    border-radius: .3rem;
+    cursor: pointer;
+    display: none;
+}
+
+.characterlist #prevG,
+.characterlist #nextG {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 100;
+    height: 5rem;
+    width: 5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    border: .2rem solid var(--black);
+    cursor: pointer;
+    text-align: center;
+}
+
+.characterlist #prevG:hover,
+.characterlist #nextG:hover {
+    color: var(--green);
+    background: var(--black);
+}
+
+.characterlist #prevG {
+    left: 3rem;
+    position: fixed;
+}
+
+.characterlist #nextG {
+    right: 3rem;
+    position: fixed;
+}
+
+.footerG {
+    background-color: var(--black);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
+    font-size: 1.3rem;
+    color: var(--green);
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+    
+    .characterlist .slide-container .slide .image .content {
+        width: 40%;
+    }
+
+    .characterlist .slide-container .slide .image {
+        width: 40%;
+        padding-bottom: .6rem;
+    }
+}
+
+@media(max-width:981px) {
+    .characterlist .slide-container .slide .image .content {
+        width: 60%;
+    }
+
+    .characterlist .slide-container .slide .image {
+        display: block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: .6rem;
+    }
+
+    .characterlist .slide-container.active .slide .image .char {
+        width: 22%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char2 {
+        width: 28%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char3 {
+        width: 33%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .footerG {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+
+    .characterlist .slide-container .slide .image .content {
+        width: 50%;
+    }
+
+    .characterlist .slide-container .slide .image {
+        display: block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: .6rem;
+    }
+
+    .characterlist .slide-container.active .slide .image .char {
+        width: 25%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char2 {
+        width: 30%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char3 {
+        width: 40%;
+    }
+
+    .characterlist #prev,
+    .characterlist #next {
+        top: 85%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .footerG {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .characterlist .slide-container.active .slide .image .char {
+        width: 30%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char2 {
+        width: 40%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char3 {
+        width: 45%;
+    }
+}
+
+@media (max-width: 500px) {
+    html {
+        font-size: 50%;
+    }
+
+    .characterlist .slide-container .slide .image .content {
+        width: 40%;
+    }
+
+    .characterlist .slide-container .slide .image {
+        display: block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: .6rem;
+    }
+
+    .characterlist .slide-container.active .slide .image .char {
+        width: 35%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char2 {
+        width: 40%;
+    }
+
+    .characterlist .slide-container.active .slide .image .char3 {
+        width: 45%;
+    }
+
+    .footer {
+        display: none;
+    }
+
+    .footerG {
+        display: none;
+    }
+}
