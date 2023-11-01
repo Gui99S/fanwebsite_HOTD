@@ -63,6 +63,32 @@ header {
     user-select: none;
 }
 
+.navbarH a {
+    float: right;
+    color: lightgray;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    letter-spacing: 1px;
+    list-style-type: none;
+    transition: 0.5s ease;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+  }
+
+.navbarH a:hover {
+    text-decoration: 2px underline;
+    text-underline-position: lightgray;
+    text-underline-offset: 10px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
 .navbar a {
     float: right;
     color: var(--red);
@@ -73,14 +99,16 @@ header {
     font-size: 17px;
     letter-spacing: 1px;
     list-style-type: none;
+    transition: 0.5s ease;
     margin: 5px;
     padding: 5px;
     user-select: none;
   }
 
 .navbar a:hover {
-    background-color: var(--red);
-    color: var(--black);
+    text-decoration: 2px underline;
+    text-underline-position: var(--red);
+    text-underline-offset: 10px;
     width: auto;
     height: auto;
     cursor: pointer;
@@ -113,10 +141,10 @@ header {
 }
 
 .logo-wrapper {
+    position: absolute;
+    transform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    position: absolute;
 }
 
 .logo-img {
@@ -128,11 +156,10 @@ header {
 
 
 /* BLACKS SECTION TARGARYENS/VELARYONS */
-/*
+
 .blacks-body {
     background-color: var(--red);
 } 
-*/
 
 .blacks-body ::selection {
     color: var(--red);
@@ -156,7 +183,7 @@ header {
 
 .characterlist .slide-container .slide .content {
     flex: 1 1 40rem;
-    animation: slideContent .4s linear 1s backwards;
+    animation: slideContent .3s linear 1s backwards;
 }
 
 @keyframes slideContent {
@@ -261,8 +288,8 @@ header {
 .characterlist #prevB,
 .characterlist #nextB {
     position: absolute;
-    top: 50%;
     transform: translateY(-50%);
+    top: 50%;
     border-radius: 50%;
     z-index: 100;
     height: 5rem;
@@ -297,7 +324,7 @@ header {
 
 
 
-/* GREENS SECTION HIGHTOWERS/TARGARYENS */
+/* GREENS SECTION HIGHTOWERS */
 
 .greens-body {
     background-color: var(--green);
@@ -330,14 +357,16 @@ header {
     font-size: 17px;
     letter-spacing: 1px;
     list-style-type: none;
+    transition: 0.5s ease;
     margin: 5px;
     padding: 5px;
     user-select: none;
   }
   
 .navbarG a:hover {
-    background-color: var(--green);
-    color: var(--black);
+    text-decoration: 2px underline;
+    text-underline-position: var(--green);
+    text-underline-offset: 10px;
     cursor: pointer;
     border-radius: 5px;
   }
